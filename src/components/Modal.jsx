@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 // Import project images
 import p1Logo from '../assets/p1/logo.png';
+import p1Image from '../assets/p1/image.png';
 import p2Logo from '../assets/p2/logo.png';
 import p2Image from '../assets/p2/image.png';
 import p3Logo from '../assets/p3/logo.png';
@@ -19,7 +20,7 @@ import p8Image from '../assets/p8/image.gif';
 
 // Create a mapping object for easy access
 const projectAssets = {
-  p1: { logo: p1Logo },
+  p1: { logo: p1Logo, image: p1Image },
   p2: { logo: p2Logo, image: p2Image },
   p3: { logo: p3Logo, image: p3Image },
   p4: { logo: p4Logo, image: p4Image },
@@ -69,14 +70,14 @@ const Modal = ({ open, onClose, title, children, project }) => {
 
         <p style={{margin: '2rem 0', textAlign: 'justify'}}>{project.longDescription}</p>
                   
-           {project && projectAssets[project.id]?.image && (
+           {project && projectAssets[project.id] && projectAssets[project.id].image ? (
              <div className="modal-image">
                <img
                  src={projectAssets[project.id].image}
                  alt={`${title} image`}
                />
              </div>
-           )}
+           ) : null}
 
         {project.link ? (
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>
