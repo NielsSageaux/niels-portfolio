@@ -9,15 +9,15 @@ const Header = () => {
       <nav className="nav">        
         <div className="nav-tabs">
           <Link 
-            to="/niels-portfolio/" 
-            className={`nav-tab ${location.pathname === '/niels-portfolio/' || location.pathname === '/niels-portfolio' ? 'active' : ''}`}
+            to="/" 
+            className={`nav-tab ${location.pathname === '/' ? 'active' : ''}`}
           >
             <span className="nav-icon">🏠</span>
             <span className="nav-label">Home</span>
           </Link>
           <Link 
-            to="/niels-portfolio/projects" 
-            className={`nav-tab ${location.pathname === '/niels-portfolio/projects' ? 'active' : ''}`}
+            to="/projects" 
+            className={`nav-tab ${location.pathname === '/projects' ? 'active' : ''}`}
           >
             <span className="nav-icon">💻</span>
             <span className="nav-label">Projects</span>

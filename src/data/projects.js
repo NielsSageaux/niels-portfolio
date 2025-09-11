@@ -6,7 +6,7 @@ const projects = [
     longDescription: 'I built a clean, minimal portfolio site to sharpen my React and Vite skills. The trickiest part was implementing the badges on the project cards. It\'s currently hosted on Hostinger, with plans to migrate to a self-hosted home server soon.',
     techs: ['React', 'Vite'],
     languages: ['JavaScript', 'CSS', 'HTML'],
-    link: 'https://github.com/NielsSageaux/portfolio'
+    link: 'https://github.com/NielsSageaux/niels-portfolio'
   },
   {
     id: 'p2',
