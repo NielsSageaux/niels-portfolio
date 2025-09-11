@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import profileImage from '../assets/profile.jpg';
 
 const Home = () => {
   const [hoveredHobby, setHoveredHobby] = useState(null);
@@ -30,7 +31,7 @@ const Home = () => {
   return (
     <main className="home-dashboard">
       <section className="card photo-card">
-        <div className="photo-placeholder" aria-label="photo placeholder" />
+        <img src={profileImage} alt="Niels Sageaux" className="profile-photo" />
         <h2>Niels Sageaux</h2>
         <p>Developer - Software Engineer</p>
       </section>
@@ -39,8 +40,10 @@ const Home = () => {
         <h2>About</h2>
         <p>
           Bonjour ! I'm Niels, a french developer from Bordeaux, now in Paris. 
-          I'm passionate about software development and I'm always looking for new challenges. 
+          I'm passionate about software development and I'm always looking for new challenges (personal or professional). 
           I'm currently freelance, working on a variety of projects but I'm open to new opportunities.
+          My strengths are adaptability, quick learning and a strong desire to improve.
+          Feel free to contact me if you have any questions or if you want to discuss a project.
         </p>
       </section>
 
