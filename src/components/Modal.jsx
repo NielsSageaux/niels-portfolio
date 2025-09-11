@@ -69,10 +69,10 @@ const Modal = ({ open, onClose, title, children, project }) => {
 
         <p style={{margin: '2rem 0', textAlign: 'justify'}}>{project.longDescription}</p>
                   
-           {project && (
+           {project && projectAssets[project.id]?.image && (
              <div className="modal-image">
                <img
-                 src={projectAssets[project.id]?.image}
+                 src={projectAssets[project.id].image}
                  alt={`${title} image`}
                />
              </div>
