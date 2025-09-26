@@ -77,7 +77,7 @@ const Modal = ({ open, onClose, title, children, project }) => {
                  alt={`${title} image`}
                />
              </div>
-           ) : null}
+           ) : null}        
 
         {project.link ? (
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>

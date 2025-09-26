@@ -7,6 +7,15 @@
   --border: rgba(0,0,0,0.08);
 }
 
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --brand: #8da1ff;
+  --card: #0b1222;
+  --border: rgba(255,255,255,0.08);
+}
+
 html { scrollbar-gutter: stable both-edges; }
 html.modal-open { scrollbar-gutter: auto; }
 
@@ -35,6 +44,10 @@ a:hover { color: #535bf2; }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+[data-theme="dark"] .site-header {
+  background: rgba(3,6,16,0.62);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .nav {
   max-width: 1100px;
@@ -69,6 +82,7 @@ a:hover { color: #535bf2; }
   padding: 0.25rem;
   border-radius: 12px;
 }
+[data-theme="dark"] .nav-tabs { background: rgba(255,255,255,0.06); }
 
 .nav-tab {
   display: flex;
@@ -87,6 +101,7 @@ a:hover { color: #535bf2; }
   color: var(--fg);
   background: rgba(255,255,255,0.5);
 }
+[data-theme="dark"] .nav-tab:hover { background: rgba(255,255,255,0.08); }
 
 .nav-tab.active {
   color: var(--fg);
@@ -203,7 +218,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
   animation: fadeIn 0.2s ease-out;
 }
 .modal { 
-  background: #fff; 
+  background: var(--card); 
   color: var(--fg); 
   max-width: 640px; 
   width: 100%; 
@@ -252,17 +267,19 @@ main { max-width: 1100px; margin: 0 auto; padding: 1rem; }
 .filter-chips { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;}
 .filter-label { font-size: 0.9rem; color: var(--muted); margin-right: 0.25rem; }
 .clear-filters { width: 10rem; }
-.chip-btn { border: 2px solid var(--chip-color, #CBD5E1); background: #fff; color: black; border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.9rem; cursor: pointer; }
-.chip-btn:hover { background: #eeeeee; color: black; }
+.chip-btn { border: 2px solid var(--chip-color, #CBD5E1); background: var(--card); color: var(--fg); border-radius: 999px; padding: 0.35rem 0.7rem; font-size: 0.9rem; cursor: pointer; }
+.chip-btn:hover { background: rgba(100,108,255,0.08); color: var(--fg); }
 .chip-btn.selected { background: var(--chip-color, #CBD5E1); color: var(--chip-text, #000);}
 
 .project-logos { display: flex; gap: 0.4rem; margin-bottom: 2rem; }
 .logo-circle { width: 28px; height: 28px; border-radius: 50%; display: inline-grid; place-items: center; font-weight: 700; font-size: 0.75rem; }
 .tech-logo { width: 16px; height: 16px; }
 
+/* system dark mode still supported if no explicit theme is set */
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0f172a; --fg: #e2e8f0; --muted: #94a3b8; --card: #0b1222; --border: rgba(255,255,255,0.08); }
-  .modal { background: #0b1222; color: var(--fg); }
+  :root:not([data-theme]) {
+    --bg: #0f172a; --fg: #e2e8f0; --muted: #94a3b8; --card: #0b1222; --border: rgba(255,255,255,0.08);
+  }
 }
 
  
